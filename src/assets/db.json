@@ -33,7 +33,7 @@
     "id": 3,
     "imageUrl": "https://static.tildacdn.com/stor3630-3432-4338-b334-363735343036/14044109.jpg",
     "title": "Кисло-сладкий цыпленок",
-    "types": [1],
+    "types": [0, 1],
     "sizes": [26, 30, 40],
     "price": 275,
     "category": 2,

@@ -9,7 +9,7 @@ export const Categories = () => {
     <div className="categories">
       <ul>
         {categories.map((category, i) => (
-          <li className={isActive === i ? 'active' : ''} onClick={() => setIsActive(i)}>
+          <li key={i} className={isActive === i ? 'active' : ''} onClick={() => setIsActive(i)}>
             {category}
           </li>
         ))}
