@@ -1,13 +1,16 @@
 import { useState } from 'react'
 
-export const Sort = () => {
+export const Sort = ({ value, setSortValue }) => {
   const [popupVisible, setPopupVisible] = useState(false)
-  const [selectedPopupItem, setSelectedPopupItem] = useState(0)
 
-  const popupListItems = ['популярности', 'цене', 'алфавиту']
+  const popupListItems = [
+    { name: 'популярности', sort: 'rating' },
+    { name: 'цене', sort: 'price' },
+    { name: 'алфавиту', sort: 'title' },
+  ]
 
   const choosingPopupFilterItem = (i) => {
-    setSelectedPopupItem(i)
+    setSortValue(i)
     setPopupVisible(false)
   }
 
@@ -27,20 +30,18 @@ export const Sort = () => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setPopupVisible(!popupVisible)}>
-          {popupListItems[selectedPopupItem]}
-        </span>
+        <span onClick={() => setPopupVisible(!popupVisible)}>{value.name}</span>
       </div>
       {popupVisible && (
         <div className="sort__popup">
           <ul>
-            {popupListItems.map((listItem, i) => (
+            {popupListItems.map((obj, i) => (
               <li
                 key={i}
-                onClick={() => choosingPopupFilterItem(i)}
-                className={selectedPopupItem === i ? 'active' : ''}
+                onClick={() => choosingPopupFilterItem(obj)}
+                className={value.sort === obj.sort ? 'active' : ''}
               >
-                {listItem}
+                {obj.name}
               </li>
             ))}
           </ul>

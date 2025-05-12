@@ -1,3 +1,7 @@
 export const NotFoundBlock = () => {
-  return <h1>Nothing</h1>
+  return (
+    <div className="container">
+      <h1>Nothing</h1>
+    </div>
+  )
 }
