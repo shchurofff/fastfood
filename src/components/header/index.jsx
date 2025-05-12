@@ -1,7 +1,8 @@
 import { Link } from 'react-router'
 import logo from '../../assets/img/pizza-logo.svg'
+import { SearchInput } from '../search'
 
-export const Header = () => {
+export const Header = ({ value, searching }) => {
   return (
     <div className="header">
       <div className="container">
@@ -14,6 +15,7 @@ export const Header = () => {
             </div>
           </div>
         </Link>
+        <SearchInput value={value} searching={searching} />
         <div className="header__cart">
           <Link to={'/cart'} className="button button--cart">
             <span>520 ₽</span>

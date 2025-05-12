@@ -4,11 +4,15 @@ import { Cart } from './pages/cart'
 import { Menu } from './pages/menu'
 import { NotFound } from './pages/not-found'
 import './scss/app.scss'
+import { useState } from 'react'
 
 function App() {
+  const [searchValue, setSearchValue] = useState('')
+  console.log(searchValue)
+
   return (
     <div className="wrapper">
-      <Header />
+      <Header value={searchValue} searching={(value) => setSearchValue(value)} />
       <div className="content">
         <Routes>
           <Route path="/" element={<Menu />} />

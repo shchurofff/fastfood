@@ -11,8 +11,6 @@ export const Menu = () => {
   const [isActiveCategory, setIsActiveCategory] = useState(0)
   const [sortValue, setSortValue] = useState({ name: 'популярности', sort: 'rating' })
 
-  console.log(sortValue)
-
   useEffect(() => {
     setIsLoading(true)
     fetch(
